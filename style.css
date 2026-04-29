@@ -1,0 +1,299 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;800&display=swap");
+
+:root {
+  --bg: #f6f1e8;
+  --text: #2f241d;
+  --text-soft: #6f6258;
+  --shadow: 0 18px 40px rgba(43, 30, 20, 0.16);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Noto Sans TC", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* Hero */
+
+.hero-home {
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+  color: white;
+}
+
+.hero-slideshow {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.slide {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+  opacity: 0;
+  transition: opacity 1.2s ease-in-out;
+}
+
+.slide.active {
+  opacity: 1;
+}
+
+.hero-dark-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(
+    to bottom,
+    rgba(17, 42, 53, 0.24),
+    rgba(23, 18, 15, 0.46)
+  );
+}
+
+.hero-overlay {
+  width: min(1200px, 94%);
+  margin: 0 auto;
+  min-height: 100vh;
+  padding: 28px 0 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.site-name,
+.hero-mini {
+  margin: 0;
+}
+
+.site-name {
+  font-size: 14px;
+  color: rgba(255,255,255,0.88);
+}
+
+.hero-mini {
+  font-size: 22px;
+  font-weight: 700;
+  color: rgba(255,255,255,0.96);
+}
+
+.hero-main {
+  min-height: 78vh;
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 32px;
+  align-items: center;
+}
+
+.hero-label {
+  display: inline-block;
+  margin: 0 0 16px;
+  padding: 7px 14px;
+  border: 1px solid rgba(255,255,255,0.22);
+  border-radius: 999px;
+  background: rgba(255,255,255,0.08);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+/* 標題：兩行設定 */
+.hero-text h1 {
+  margin: 0;
+  font-size: clamp(2.4rem, 5vw, 4.2rem);
+  line-height: 1.2;
+  max-width: 18ch;
+  text-wrap: balance;
+}
+
+.hero-description {
+  margin: 22px 0 0;
+  max-width: 35rem;
+  font-size: 17px;
+  line-height: 1.9;
+  color: rgba(255,255,255,0.92);
+}
+
+.hero-side {
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* 放大＋往左移一點的圓形個人照 */
+.hero-avatar-frame {
+  width: clamp(300px, 31vw, 360px);
+  height: clamp(300px, 31vw, 360px);
+  border-radius: 50%;
+  overflow: hidden;
+  border: 4px solid rgba(255,255,255,0.4);
+  box-shadow: 0 18px 44px rgba(20, 16, 12, 0.22);
+  transform: translateX(-28px);
+}
+
+.hero-profile {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 50%;
+}
+
+/* 底下四個卡片 */
+
+.nav-cards-section {
+  position: relative;
+  z-index: 5;
+  margin-top: -72px;
+  padding-bottom: 72px;
+}
+
+.nav-cards {
+  width: min(1200px, 94%);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+
+.nav-card {
+  position: relative;
+  min-height: 250px;
+  border-radius: 24px;
+  overflow: hidden;
+  text-decoration: none;
+  color: white;
+  box-shadow: 0 18px 40px rgba(33, 24, 18, 0.14);
+  transform: translateY(0);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.nav-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 28px 50px rgba(33, 24, 18, 0.2);
+}
+
+.nav-card img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.45s ease;
+}
+
+.nav-card:hover img {
+  transform: scale(1.06);
+}
+
+.nav-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(28,21,17,0.78), rgba(28,21,17,0.08));
+}
+
+.nav-card-text {
+  position: absolute;
+  left: 18px;
+  right: 18px;
+  bottom: 18px;
+  z-index: 2;
+}
+
+.nav-card-text h2 {
+  margin: 0 0 8px;
+  font-size: 24px;
+}
+
+.nav-card-text p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.7;
+  color: rgba(255,255,255,0.88);
+}
+
+/* RWD */
+
+@media (max-width: 1100px) {
+  .nav-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .hero-overlay {
+    min-height: auto;
+    padding-bottom: 120px;
+  }
+
+  .hero-main {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    min-height: auto;
+    padding: 70px 0 40px;
+  }
+
+  .hero-side {
+    justify-content: flex-start;
+  }
+
+  .hero-avatar-frame {
+    width: 250px;
+    height: 250px;
+    transform: translateX(0);
+  }
+
+  .hero-top {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+}
+
+@media (max-width: 640px) {
+  .nav-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .nav-cards-section {
+    margin-top: -40px;
+    padding-bottom: 56px;
+  }
+
+  .hero-mini {
+    font-size: 18px;
+  }
+
+  .hero-text h1 {
+    max-width: 100%;
+    font-size: clamp(2rem, 7vw, 3.2rem);
+    line-height: 1.25;
+  }
+}
+/* 螢幕比較寬時（橫向拉很長）把焦點稍微往中間移 */
+@media (min-aspect-ratio: 16/9) {
+  .slide {
+    object-position: center 40%;
+  }
+}
+
+/* 螢幕比較高時（視窗較窄、偏直）把焦點往上拉，保留人物 */
+@media (max-aspect-ratio: 4/3) {
+  .slide {
+    object-position: center 25%;
+  }
+}
