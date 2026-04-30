@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Me | Personal Academic Portfolio</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="./about.css">
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.0/dist/chart.umd.min.js" defer></script>
+  <script src="./about.js" defer></script>
+</head>
+<body>
+  <div class="about-root" data-current-lang="zh">
+    <section class="about-hero">
+      <div class="hero-slideshow">
+        <img src="./assets/bg-1.jpg" class="slide active" alt="背景照片 1">
+        <img src="./assets/bg-2.jpg" class="slide slide-2" alt="背景照片 2">
+        <img src="./assets/bg-3.jpg" class="slide slide-3" alt="背景照片 3">
+        <img src="./assets/bg-4.jpg" class="slide" alt="背景照片 4">
+      </div>
+
+      <div class="hero-dark-overlay"></div>
+
+      <div class="hero-overlay">
+        <div class="hero-top">
+          <div>
+            <p class="site-name" data-lang="zh">Personal Academic Portfolio</p>
+            <p class="site-name" data-lang="en">Personal Academic Portfolio</p>
+            <p class="hero-mini" data-lang="zh">李昭瀚｜臺中二中</p>
+            <p class="hero-mini" data-lang="en">Chao-Han, Lee ｜ TCSSH</p>
+          </div>
+
+          <div class="lang-switcher">
+            <button class="lang-btn active" type="button" data-set-lang="zh">中</button>
+            <button class="lang-btn" type="button" data-set-lang="en">EN</button>
+          </div>
+        </div>
+
+        <div class="hero-main">
+          <div class="hero-text">
+            <h1 data-lang="zh">關於我</h1>
+            <h1 data-lang="en">About Me</h1>
+
+            <p class="hero-description" data-lang="zh">
+              這一頁整理了我的基本資料、個人特質、興趣能力、學習成績、檢定證照與師長評價，
+              呈現我如何一步步朝向化工、電機與物理等理工領域前進。
+            </p>
+
+            <p class="hero-description" data-lang="en">
+              This page presents my background, personal traits, interests, academic performance,
+              certificates, and teacher recommendations, showing how I have been moving toward
+              chemical engineering, electrical engineering, and physics.
+            </p>
+          </div>
+
+          <div class="hero-side hero-hover-zone">
+            <div class="hero-intro-card">
+              <p class="hero-intro-text" data-lang="zh">
+                我目前就讀臺中二中，申請方向以化工、電機與物理相關科系為主。我喜歡從實作與分析中理解問題，
+                並透過整理資料與成績曲線來觀察自己的學習變化。<br><br>
+                在校期間，我確認自己對數學、物理與半導體議題的興趣，也希望未來能持續往電機與半導體相關領域深入發展。
+              </p>
+
+              <p class="hero-intro-text" data-lang="en">
+                I am currently a student at Taichung Second Senior High School, and I plan to apply to
+                programs related to chemical engineering, electrical engineering, and physics.
+                I enjoy understanding problems through hands-on practice and analysis, and I often
+                organize data and score trends to observe my learning progress.<br><br>
+                During high school, I confirmed my strong interest in mathematics, physics, and
+                semiconductor-related topics, and I hope to continue developing toward electrical
+                engineering and semiconductor fields in the future.
+              </p>
+            </div>
+
+            <div class="hero-avatar-hit" tabindex="0" aria-label="個人照片">
+              <div class="hero-avatar-frame">
+                <img src="./assets/profile.jpg" alt="Chao-Han, Lee portrait" class="hero-profile">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-slider-controls">
+          <button class="hero-nav hero-nav-prev" type="button" aria-label="上一張背景照片">&#8249;</button>
+          <div class="hero-dots">
+            <button class="hero-dot active" type="button" data-slide="0" aria-label="切換到第 1 張"></button>
+            <button class="hero-dot" type="button" data-slide="1" aria-label="切換到第 2 張"></button>
+            <button class="hero-dot" type="button" data-slide="2" aria-label="切換到第 3 張"></button>
+            <button class="hero-dot" type="button" data-slide="3" aria-label="切換到第 4 張"></button>
+          </div>
+          <button class="hero-nav hero-nav-next" type="button" aria-label="下一張背景照片">&#8250;</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="about-page">
+      <div class="about-wrap">
+        <section class="about-card-grid">
+          <article class="about-info-card">
+            <h2 data-lang="zh">你是誰</h2>
+            <h2 data-lang="en">Who I Am</h2>
+            <div data-lang="zh">
+              <p><strong>姓名：</strong>李昭瀚</p>
+              <p><strong>學校：</strong>臺中二中</p>
+              <p><strong>目前身份：</strong>高中生</p>
+              <p><strong>生日：</strong>2008/01/09（18歲）</p>
+              <p><strong>申請方向：</strong>化工、電機、物理</p>
+            </div>
+            <div data-lang="en">
+              <p><strong>Name:</strong> Chao-Han, Lee</p>
+              <p><strong>School:</strong> Taichung Second Senior High School</p>
+              <p><strong>Status:</strong> High school student</p>
+              <p><strong>Birthday:</strong> 2008/01/09 (18 years old)</p>
+              <p><strong>Application Fields:</strong> Chemical Engineering, Electrical Engineering, Physics</p>
+            </div>
+          </article>
+
+          <article class="about-info-card">
+            <h2 data-lang="zh">個人特質</h2>
+            <h2 data-lang="en">Personal Traits</h2>
+            <div data-lang="zh">
+              <p>細心、外向、熱於助人，重視誠信與合作。</p>
+              <p>我重視規劃與分工，也願意主動協助同學與團隊完成任務。</p>
+            </div>
+            <div data-lang="en">
+              <p>Careful, outgoing, and willing to help others; I value honesty and collaboration.</p>
+              <p>I care about planning and teamwork, and I actively help classmates complete tasks smoothly.</p>
+            </div>
+          </article>
+
+          <article class="about-info-card">
+            <h2 data-lang="zh">興趣與能力</h2>
+            <h2 data-lang="en">Interests & Strengths</h2>
+            <div data-lang="zh">
+              <p>我對電機、化學、半導體、動手實作與資料分析有濃厚興趣。</p>
+              <p>我也喜歡用圖表整理資訊，觀察自己在英文與物理等科目的成長曲線。</p>
+            </div>
+            <div data-lang="en">
+              <p>I am strongly interested in electrical engineering, chemistry, semiconductors, hands-on practice, and data analysis.</p>
+              <p>I also like organizing information with charts and tracking my growth in subjects such as English and physics.</p>
+            </div>
+          </article>
+
+          <article class="about-info-card">
+            <h2 data-lang="zh">未來方向</h2>
+            <h2 data-lang="en">Future Direction</h2>
+            <div data-lang="zh">
+              <p>由於我對數學、物理與半導體議題特別有興趣，因此希望未來往電機與半導體相關領域發展。</p>
+              <p>我期待在大學中結合理論與實作，持續培養研究能力與工程素養。</p>
+            </div>
+            <div data-lang="en">
+              <p>Because I am especially interested in mathematics, physics, and semiconductor-related topics, I hope to develop in electrical engineering and semiconductor fields.</p>
+              <p>In university, I hope to combine theory with practice and continue building research ability and engineering skills.</p>
+            </div>
+          </article>
+        </section>
+
+        <section class="about-section">
+          <div class="section-heading">
+            <h2 data-lang="zh">學習成績曲線</h2>
+            <h2 data-lang="en">Academic Performance</h2>
+          </div>
+
+          <div class="chart-grid">
+            <article class="chart-card">
+              <h3 data-lang="zh">學期總成績</h3>
+              <h3 data-lang="en">Semester Average</h3>
+              <div class="chart-box"><canvas id="semesterChart"></canvas></div>
+            </article>
+
+            <article class="chart-card">
+              <h3 data-lang="zh">學測成績</h3>
+              <h3 data-lang="en">GSAT Scores</h3>
+              <div class="chart-box"><canvas id="gsatChart"></canvas></div>
+            </article>
+
+            <article class="chart-card">
+              <h3 data-lang="zh">物理成績曲線</h3>
+              <h3 data-lang="en">Physics Trend</h3>
+              <div class="chart-box"><canvas id="physicsChart"></canvas></div>
+            </article>
+
+            <article class="chart-card">
+              <h3 data-lang="zh">英文成績曲線</h3>
+              <h3 data-lang="en">English Trend</h3>
+              <div class="chart-box"><canvas id="englishChart"></canvas></div>
+            </article>
+          </div>
+        </section>
+      </div>
+    </section>
+  </div>
+</body>
+</html>
