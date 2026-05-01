@@ -351,7 +351,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 return context.dataIndex >= 4
                   ? t.notTaken
                   : `${t.scorePrefix}${context.raw}`;
-              }
+              };
             }
           }
         },
