@@ -5,12 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About Me | Personal Academic Portfolio</title>
 
-  //fonts.googleapis.com">
-  //fonts.gstatic.com" crossorigin>
-  //fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@500;700&display=swap" rel="stylesheetet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@500;700&display=swap"
+    rel="stylesheet"
+  >
 
-  /assets/about.css">
+  <!-- CSS 放在 assets -->
+  <link rel="stylesheet" href="./assets/about.css">
+
+  <!-- Chart.js CDN -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.0/dist/chart.umd.min.js" defer></script>
+
+  <!-- JS 放在 assets -->
   <script src="./assets/about.js" defer></script>
 </head>
 <body>
@@ -98,7 +106,7 @@
             <div class="hero-avatar-hit" tabindex="0" aria-label="個人照片">
               <div class="hero-avatar-frame">
                 <img
-                  src="https://drive.google.com/thumbnail?id=1V-ARB9rjEe4Kqy_N5Gr78WYihqsKcIAj&sz=w1000"
+                  src="https://drive.google.com/thumbnail?id=1V-ARB9rjEe4Kqy_N5Gr78WYihqsKcIAj&sz=w1200"
                   alt="Chao-Han, Lee portrait"
                   class="hero-profile"
                 >
@@ -192,25 +200,33 @@
             <article class="chart-card">
               <h3 data-lang="zh">學期總成績</h3>
               <h3 data-lang="en">Semester Average</h3>
-              <div class="chart-box">anvas id="semesterChart"></canvas></div>
+              <div class="chart-box">
+                <canvas id="semesterChart"></canvas>
+              </div>
             </article>
 
             <article class="chart-card">
               <h3 data-lang="zh">學測成績</h3>
               <h3 data-lang="en">GSAT Scores</h3>
-              <div class="chart-box">anvas id="gsatChart"></canvas></div>
+              <div class="chart-box">
+                <canvas id="gsatChart"></canvas>
+              </div>
             </article>
 
             <article class="chart-card">
               <h3 data-lang="zh">物理成績曲線</h3>
               <h3 data-lang="en">Physics Trend</h3>
-              <div class="chart-box">anvas id="physicsChart"></canvas></div>
+              <div class="chart-box">
+                <canvas id="physicsChart"></canvas>
+              </div>
             </article>
 
             <article class="chart-card">
               <h3 data-lang="zh">英文成績曲線</h3>
               <h3 data-lang="en">English Trend</h3>
-              <div class="chart-box">anvas id="englishChart"></canvas></div>
+              <div class="chart-box">
+                <canvas id="englishChart"></canvas>
+              </div>
             </article>
           </div>
         </section>
