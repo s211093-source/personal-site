@@ -239,10 +239,10 @@ button {
 .hero-intro-card {
   position: absolute;
   left: -42px;
+  right: -44px;
   top: 50%;
-  width: calc(100% - 40px);
   min-height: 430px;
-  padding: 54px 320px 54px 60px;
+  padding: 54px 340px 54px 60px;
   background: rgba(178, 123, 83, 0.93);
   border: 1px solid rgba(255, 240, 228, 0.15);
   border-radius: 38px;
@@ -377,7 +377,7 @@ button {
 
 .chart-box {
   position: relative;
-  height: 320px;
+  height: 340px;
   padding: 14px;
   border-radius: 20px;
   border: 1px solid rgba(125, 88, 58, 0.1);
@@ -455,22 +455,14 @@ button {
   }
 
   .hero-intro-card {
-  position: absolute;
-  left: -42px;
-  right: -44px;
-  top: 50%;
-  min-height: 430px;
-  padding: 54px 340px 54px 60px;
-  background: rgba(178, 123, 83, 0.93);
-  border: 1px solid rgba(255, 240, 228, 0.15);
-  border-radius: 38px;
-  box-shadow: 0 20px 45px rgba(60, 35, 20, 0.2);
-  transform: translateY(-50%) translateX(70px);
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.35s ease, transform 0.45s ease;
-  z-index: 1;
-}
+    position: static;
+    width: 100%;
+    min-height: auto;
+    padding: 42px 34px;
+    transform: none;
+    opacity: 1;
+    pointer-events: auto;
+  }
 
   .hero-intro-text {
     font-size: 1.12rem;
@@ -531,6 +523,6 @@ button {
   }
 
   .chart-box {
-    height: 270px;
+    height: 285px;
   }
 }
