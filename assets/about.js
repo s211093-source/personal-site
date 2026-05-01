@@ -80,7 +80,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function restartSlideshow() {
     clearInterval(slideTimer);
-    slideTimer = setInterval(() => showSlide(currentSlide + 1), 5000);
+    slideTimer = setInterval(() => {
+      showSlide(currentSlide + 1);
+    }, 5000);
   }
 
   langButtons.forEach((btn) => {
@@ -108,10 +110,6 @@ document.addEventListener("DOMContentLoaded", () => {
       restartSlideshow();
     });
   });
-
-  setLanguage("zh");
-  showSlide(0);
-  restartSlideshow();
 
   if (typeof Chart === "undefined") {
     console.error("Chart.js not loaded");
@@ -351,7 +349,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 return context.dataIndex >= 4
                   ? t.notTaken
                   : `${t.scorePrefix}${context.raw}`;
-              };
+              }
             }
           }
         },
@@ -481,4 +479,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   createCharts();
+  setLanguage("zh");
+  showSlide(0);
+  restartSlideshow();
 });
