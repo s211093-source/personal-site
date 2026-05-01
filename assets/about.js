@@ -23,7 +23,6 @@ document.addEventListener("DOMContentLoaded", () => {
       myScore: "我的成績",
       classAvg: "班平均",
       gsatDataset: "學測成績",
-      examText: "學科能力測驗",
       notTaken: "未報考",
       scorePrefix: "分數：",
       markerText: "學測"
@@ -36,7 +35,6 @@ document.addEventListener("DOMContentLoaded", () => {
       myScore: "My Score",
       classAvg: "Class Average",
       gsatDataset: "GSAT",
-      examText: "GSAT",
       notTaken: "Not Taken",
       scorePrefix: "Score: ",
       markerText: "GSAT"
@@ -314,45 +312,6 @@ document.addEventListener("DOMContentLoaded", () => {
       plugins: [examMarkerPlugin]
     });
 
-    physicsChart = new Chart(physicsCanvas, {
-      type: "line",
-      data: {
-        labels: t.physicsLabels,
-        datasets: [
-          {
-            label: t.myScore,
-            data: chartData.physicsMine,
-            borderColor: "#b56e44",
-            pointBackgroundColor: "#7a4f35",
-            pointBorderColor: "#fff",
-            pointRadius: 4.5,
-            borderWidth: 3,
-            tension: 0,
-            fill: false,
-            segment: {
-              borderDash: (ctx) => ctx.p0DataIndex === 4 ? [8, 6] : undefined
-            }
-          },
-          {
-            label: t.classAvg,
-            data: chartData.physicsAvg,
-            borderColor: "#87a0a4",
-            pointBackgroundColor: "#5f7b80",
-            pointBorderColor: "#fff",
-            pointRadius: 4,
-            borderWidth: 3,
-            tension: 0,
-            fill: false,
-            segment: {
-              borderDash: (ctx) => ctx.p0DataIndex === 4 ? [8, 6] : undefined
-            }
-          }
-        ]
-      },
-      options: commonLineOptions(55, 90),
-      plugins: [examMarkerPlugin]
-    });
-
     gsatChart = new Chart(gsatCanvas, {
       type: "bar",
       data: {
@@ -417,6 +376,45 @@ document.addEventListener("DOMContentLoaded", () => {
       plugins: [gsatLabelPlugin]
     });
 
+    physicsChart = new Chart(physicsCanvas, {
+      type: "line",
+      data: {
+        labels: t.physicsLabels,
+        datasets: [
+          {
+            label: t.myScore,
+            data: chartData.physicsMine,
+            borderColor: "#b56e44",
+            pointBackgroundColor: "#7a4f35",
+            pointBorderColor: "#fff",
+            pointRadius: 4.5,
+            borderWidth: 3,
+            tension: 0,
+            fill: false,
+            segment: {
+              borderDash: (ctx) => ctx.p0DataIndex === 4 ? [8, 6] : undefined
+            }
+          },
+          {
+            label: t.classAvg,
+            data: chartData.physicsAvg,
+            borderColor: "#87a0a4",
+            pointBackgroundColor: "#5f7b80",
+            pointBorderColor: "#fff",
+            pointRadius: 4,
+            borderWidth: 3,
+            tension: 0,
+            fill: false,
+            segment: {
+              borderDash: (ctx) => ctx.p0DataIndex === 4 ? [8, 6] : undefined
+            }
+          }
+        ]
+      },
+      options: commonLineOptions(55, 90),
+      plugins: [examMarkerPlugin]
+    });
+
     englishChart = new Chart(englishCanvas, {
       type: "line",
       data: {
@@ -467,14 +465,14 @@ document.addEventListener("DOMContentLoaded", () => {
     semesterChart.data.datasets[0].label = t.semesterDataset;
     semesterChart.update();
 
+    gsatChart.data.labels = t.gsatLabels;
+    gsatChart.data.datasets[0].label = t.gsatDataset;
+    gsatChart.update();
+
     physicsChart.data.labels = t.physicsLabels;
     physicsChart.data.datasets[0].label = t.myScore;
     physicsChart.data.datasets[1].label = t.classAvg;
     physicsChart.update();
-
-    gsatChart.data.labels = t.gsatLabels;
-    gsatChart.data.datasets[0].label = t.gsatDataset;
-    gsatChart.update();
 
     englishChart.data.labels = t.semesterLabels;
     englishChart.data.datasets[0].label = t.myScore;
